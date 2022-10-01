@@ -1,29 +1,25 @@
+def elec(l, k, n, m):
+    num = 0
+    e = k
+    idx = 0
+    for i in range(1, n):
+        e -= 1
+        if i in l and idx < m-1:
+            idx += 1
+            if (l[idx]-i) > e:
+                e = k
+                num += 1
+        elif i in l and idx == m-1:
+            if (n - i) > e:
+                e = k
+                num += 1
+        if e == 0:
+            return 0
+    return num
+
 T = int(input())
 for test_case in range(1, T + 1):
     k, n, m = map(int, input().split())
     l = list(map(int, input().split()))
-    num = 0
-    elec = k
-    i = 0
-    j = 0
-    while i <= n:
-        elec -= 1
-        i += 1
-        if i < l[j] and elec > 0:
-            pass
-        elif i < l[j] and elec <=0:
-            num = 0
-            break
-        if i >= l[j] and elec > 0:
-            if (i+elec) < l[j+1]:
-                num += 1
-                j += 1
-                i = l[j]
-            elif (i+elec) == l[j+1]:
-                num += 1
-                j += 1
-                i = l[j]
-            else:
-                num = 0
-                break
-    print('#{} {}'.format(test_case, num))
+    out = elec(l, k, n, m)
+    print('#{} {}'.format(test_case, out))
