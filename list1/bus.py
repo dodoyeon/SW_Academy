@@ -1,3 +1,4 @@
+# 어케 푼건지 아리까리..
 def elec(l, k, n, m):
     num = 0
     e = k

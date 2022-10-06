@@ -1,12 +1,11 @@
 def miro_path(miro, n, idx, next_x, next_y, next_val, visited, path_stack):
-    move = [(1,0),(-1,0),(0,1),(0,-1)]
 
     while next_val != 3:
-        nx = next_x + move[idx][0]
-        ny = next_y + move[idx][1]
-        next_val = miro[nx][ny]
+        next_x += 1
+        ny = next_y
+        next_val = miro[next_x][next_y]
 
-        if (nx,ny) in visited or next_val == 1 or ((nx>=n) or (ny>=n)):
+        if (next_x,next_y) in visited or next_val == 1 or ((next_x>=n) or (next_y>=n)):
             past = path_stack.pop()
             next_x = past[0]
             next_y = past[1]
@@ -25,6 +24,7 @@ def miro_path(miro, n, idx, next_x, next_y, next_val, visited, path_stack):
             return 0
     return 1
 
+def miro_new():
 
 
 T = int(input())
@@ -47,4 +47,5 @@ for test_case in range(1, T + 1):
     # end_y = end%n
     path_stack = [(start_x, start_y)]
     visited = []
-    miro_path(miro, n, 0, start_x, start_y,2, visited, path_stack)
+    # miro_path(miro, n, 0, start_x, start_y,2, visited, path_stack)
+    miro_new()
