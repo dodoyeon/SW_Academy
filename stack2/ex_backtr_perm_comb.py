@@ -37,4 +37,4 @@ def combination(l, m, level, idx):
         return
     for i in range(idx, len(l)):
         result[level] = l[i]
-        combination(l, m, level+1, idx+1)
+        combination(l, m, level+1, i+1)
