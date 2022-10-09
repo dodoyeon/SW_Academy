@@ -46,3 +46,11 @@ print(l)
 
 l.sort(key=lambda x: (x[1], -x[0])) # lambda :익명함수 잠깐 쓰고 없앨 함수, 기본인자=x :다음에 함수내용나옴
 print(l)
+
+# 백준 10825 : 국영수
+# n = int(input())
+# score = []
+# for _ in range(n):
+#     name = [input.split()]
+#
+# name.sort(key=lambda x: (-x[1],x[2],-x[3],ord(x[0])))
