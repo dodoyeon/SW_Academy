@@ -1,3 +1,4 @@
+# 미로탐색
 from collections import deque
 
 n, m = map(int, input().split())
@@ -5,19 +6,19 @@ miro = [list(map(int, input())) for _ in range(n)]
 
 visited = [[0]*m for _ in range(n)]
 q = deque()
-visited[0][0]=1
 q.append([0,0])
+visited[0][0]=1
 
 dx = [1,0,-1,0]
 dy = [0,1,0,-1]
 
 while bool(q):
+    x, y = q.popleft()
     for i in range(4):
-        x, y =q.popleft()
         nx = x + dx[i]
         ny = y + dy[i]
-        if 0<=nx<m and 0<=ny<m and miro[nx][ny]!=0 and visited[nx][ny] ==0:
-            visited[nx][ny]=visited[x][y]+1
+        if 0<=nx<m and 0<=ny<n and miro[ny][nx]==1 and visited[ny][nx] ==0:
+            visited[ny][nx]=visited[y][x]+1
             q.append([nx,ny])
 print(visited[n-1][m-1])
 
