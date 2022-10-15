@@ -3,8 +3,8 @@ m = 3
 l = [(i+1) for i in range(n)]
 result_p = [0]*m
 visited_p = [False]*n
+
 result_c =[0]*m
-# visited_c = [False]*n
 
 def permutation(l, m, level):
     if level == m:
