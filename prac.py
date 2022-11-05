@@ -19,7 +19,7 @@ def bfs(y, x):
     for _ in range (N)] # NxN 격자의 경우
     visited[y][x] = True
     while q: #queue에 값이 존재하는 동안 반복
-        sy, sx = q.popleft()
+        y, x = q.popleft()
         for d in range ( 4 ): # pop한 좌표의 4방향 탐색
             ny = sy + dy[d]
             nx = sx + dx[d]
