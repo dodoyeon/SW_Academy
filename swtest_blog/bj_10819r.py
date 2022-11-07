@@ -1,11 +1,10 @@
 n = int(input())
 l = list(map(int, input().split()))
 
-
 max = 0
 def perm_sum(l,n,level, perm_result, out, visited):
     if level == n:
-        perm_out = out[:] #copy
+        perm_out = out[:] # copy
         perm_result.append(perm_out)
         return
     for i in range(n):

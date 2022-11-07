@@ -1,3 +1,4 @@
+# DFS 와 BFS
 from collections import deque
 # DFS
 def dfs_recur(graph, node, visited):
