@@ -14,7 +14,7 @@ def bfs(graph, start, n):
     return visited
 
 n, m = map(int, input().split())
-graph = [[] for _ in range(m)]
+graph = [[] for _ in range(n)]
 for _ in range(m):
     a, b = map(int, input().split())
     graph[a-1].append(b)
