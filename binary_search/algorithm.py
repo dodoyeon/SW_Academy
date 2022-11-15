@@ -24,4 +24,3 @@ def bin_search_recur(l, a, start, end):
     else:
         end = mid - 1
         bin_search_recur(l, a, start, end)
-
