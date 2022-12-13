@@ -6,4 +6,4 @@ for _ in range(n-1):
     t = l[1]-l[0]
     l.append(t)
     meeting.append(l)
-
+tlqkf.....
