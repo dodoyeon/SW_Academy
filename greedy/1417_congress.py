@@ -42,7 +42,17 @@ def maesu_2(n, cand):
             num += c
         if cand[i] > cand[-1]:
             q.append(i)
+    return num
 
+def maesu_3(n, me, cand):
+    num = 0
+    if len(cand)==0:
+        return 0
+    while cand[-1]>=me:
+        num += 1
+        me += 1
+        cand[-1] -= 1
+        cand.sort()
     return num
 
 n = int(input())
@@ -51,7 +61,4 @@ cand = []
 for _ in range(n-1):
     cand.append(int(input()))
 cand.sort()
-cand.append(me)
-print(maesu_2(n, cand))
-
-tldldldldldlldlqkdkdkdkdkdkf ahfmrpTek tlqkf
+print(maesu_3(n, me, cand))

@@ -1,8 +1,7 @@
 # 병든 나이트
-dx = (1, 2, -1, -2)
-dy = (2, 1, 2, 1)
-max_n = 0
-def dfs(visited, num, x, y):
+dx = (1, 2, 1, 2)
+dy = (2, 1, -2, -1)
+def bfs(visited, num):
     global dx, dy
     global max_n
     for i in range(4):
@@ -11,19 +10,21 @@ def dfs(visited, num, x, y):
         if 0 <= nx < m and 0 <= ny < n and visited[ny][nx] == False:
             num[i] += 1
             visited[ny][nx] = True
-            dfs(visited, num, nx, ny)
-    if 0 in num:
-        pass
+            q.append([nx, ny])
+    s = sum(num)
+    if (0 in num) and s >= 4:
+        return sum(sum(i) for i in visited)
+        # return visited.count(True)
+    elif s < 4:
+        return sum(sum(i) for i in visited)
     else:
-        s = sum(num)
-        if max_n < s:
-            max_n = s
+        return 1
 
 def move(n, m):
     visited = [[False]*m for _ in range(n)]
     num = [0]*4
-    dfs(visited, num, 0, 0)
+    visited[0][0] = True
+    return bfs(visited, num)
 
 n, m = map(int, input().split())
-move(n, m)
-print(max_n)
+print(move(n, m))
