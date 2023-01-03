@@ -2,7 +2,7 @@
 dx = (1, 0, -1, 0)
 dy = (0, 1, 0, -1)
 def chess(n, m, pan):
-
+    
     for i in range(4):
 
     return num
