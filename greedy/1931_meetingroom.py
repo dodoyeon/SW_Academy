@@ -1,8 +1,17 @@
 # 회의실 배정
+def dfs(now, num):
+    global m
+    if now == n:
+        m = max(m, num)
+        
+    if (now+)<=n:
+        dfs(, num +1)
+    dfs(, num)
+
 n = int(input())
-meeting = []
-for _ in range(n-1):
-    l = list(map(int, input().split()))
-    t = l[1]-l[0]
-    l.append(t)
-    meeting.append(l)
+for i in range(n):
+    s, e = map(int, input().split())
+    meeting = [list(s, (e-s))]
+m = 0
+dfs(0, 0)
+print()
