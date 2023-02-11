@@ -1,4 +1,5 @@
 # 다리 놓기
+from itertools import combinations
 def dfs(now):
     global num
     if now == n:
@@ -9,7 +10,7 @@ def dfs(now):
             dfs(now+1)
 
 def bridge(n, m):
-    d=[]
+    d=[0]*(n)
 
     return
 
