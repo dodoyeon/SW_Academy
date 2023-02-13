@@ -1,7 +1,9 @@
 # 1로 만들기 문제
 def make1(n):
     d = [i for i in range(n, -1, -1)]
+    # d = [0]*(n+1)
     for i in range(n, 0, -1):
+        d[i-1] = min(d[i-1], d[i] + 1)
         if i%2 == 0:
             d[i//2] = min(d[i//2], d[i]+1)
         if i%3 == 0:
@@ -22,3 +24,4 @@ n = int(input())
 print(make2(n))
 print(make1(n))
 # 18 = 6 2 1 7 = 6 2 1 25=24 8 4 2 1
+# 14 = 7 6 2 1

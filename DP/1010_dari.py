@@ -8,7 +8,7 @@ def dfs(now):
     for i in range(m):
         if i >= now:
             dfs(now+1)
-
+mmmmmmmmmmmmmm?
 def bridge(n, m):
     d=[0]*(n)
 

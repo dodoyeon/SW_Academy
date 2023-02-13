@@ -4,7 +4,7 @@ def toisa(n, l):
         now = l[i]
         if (i+now[0]) <= n and d[now[0]] == 0:
             d[now[0]] = now[1]
-
+MMMMMMMMMMMMMMMMMMMMMMMMMMM?
     return
 n = int(input())
 l = []
