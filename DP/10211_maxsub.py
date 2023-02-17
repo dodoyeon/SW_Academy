@@ -29,3 +29,5 @@ for _ in range(t):
     n = int(input())
     l = list(map(int, input().split()))
     print(maxsub_answersheet(n, l))
+
+# 1 -2 4 5 6 -7 7
