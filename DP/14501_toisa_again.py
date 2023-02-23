@@ -1,15 +1,15 @@
 def toisa(n, l):
-    d = [0]*(n+1)
-    for i in range(n-1, -1, -1):
-        nowt = l[i][0]
-        nowp = l[i][1]
-        if i + nowt <= n:
-            d[i] = max(d[i+nowt]+nowp, d[i])
+    d = [0]*n
+    if l[-1][0] == 1:
+        d[-1] = l[-1][1]
+    for i in range(n-2, -1, -1):
+        now = l[i]
+        if (i+now[0]-1) <= n-1:
+            d[i] = max(d[i+now[0]-1]+now[1], d[i])
+        else:
+            d[i] = d[i+1]
     return d[0]
-    # 0 0 10 30 0 45
 
 n = int(input())
-l = []
-for _ in range(n):
-    l.append(list(map(int, input().split())))
+l = [list(map(int, input().split())) for _ in range(n)]
 print(toisa(n, l))
