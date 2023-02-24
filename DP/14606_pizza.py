@@ -4,22 +4,20 @@
 # 10 - 5 5 - 3 2 3 2 - 2 1 11 2 1 11
 #
 def pizza(n):
-    d = [0]*(n+1)
-    num = 1
-    idx, t = n//2, n%2
-    d[n] = idx*(idx+t)
-    while idx != 1:
-        idx_next, t_next = idx // 2, idx % 2
-        if t == 0:
-            d[idx] = num*(idx_next*(idx_next+t_next))
-        else:
-            d[idx] += idx_next*(idx_next+t_next)
-            d[idx+t] += idx_next*(idx_next+t_next)
-        num *= 2
-        idx, t = idx_next, t_next
-    if t == 1:
-        return sum(d)+1
-    return sum(d)
+    if n == 1:
+        return 0
+    d = [[0]*(n+1) for _ in range(2)]
+    mok = n//2
+    d[0][n] = mok*(n-mok)
+    d[1][mok] += 1
+    d[1][n - mok] += 1
+    for i in range(n-1, 0, -1):
+        if d[1][i] >= 1:
+            mok = i//2
+            d[0][i] += d[1][i]*mok*(i-mok)
+            d[1][mok] += d[1][i]
+            d[1][i-mok] += d[1][i]
+    return sum(d[0])
 
 n = int(input())
 print(pizza(n))
