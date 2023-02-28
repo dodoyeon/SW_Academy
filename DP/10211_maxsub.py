@@ -18,7 +18,7 @@ def maxsub(n, l):
     return max(d0, d1)
 
 def maxsub_answersheet(n, l):
-    d = l
+    d = l[:]
     for i in range(1, n):
         if d[i-1] > 0:
             d[i] += d[i-1]

@@ -1,5 +1,5 @@
 # Auxiliary Project
-seg_dict = {}
+seg_dict = {}??????????
 def seg(n):
 
     return

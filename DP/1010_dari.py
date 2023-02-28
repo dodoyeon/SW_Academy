@@ -1,8 +1,8 @@
-# 다리 놓기
+# 다리 놓기 https://www.acmicpc.net/problem/1010
 def bridge(n, m):
     d=[0]*n
     l = [i for i in range(m)]
-    for i in range(m):
+    for i in range(m):???????????????
         if l[i]
     return
 

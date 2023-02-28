@@ -1,4 +1,4 @@
-# Polynesiaglot (Small1)
+# Polynesiaglot (Small1) https://www.acmicpc.net/problem/12037
 from itertools import product
 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm?
 def poly(c, v, l):
