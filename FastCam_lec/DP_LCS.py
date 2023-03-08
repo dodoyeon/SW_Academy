@@ -1,4 +1,4 @@
-# LCS
+# 9251 LCS
 def lcs(n, m, nl, ml):
     d = 0
     maxd = 0
